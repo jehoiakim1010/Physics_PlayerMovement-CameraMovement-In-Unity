@@ -32,7 +32,8 @@ public class CameraMovement : MonoBehaviour
 
     public void CameraMove()
     {
-        //If The Player Pressed The Right Mouse Button
+        //
+        //If The Player Pressed The Right Mouse Button it will zoom In
         if (Input.GetMouseButton(1))
         {
             //The Main Camera field Of View will be decreseased
@@ -51,7 +52,7 @@ public class CameraMovement : MonoBehaviour
         MouseX += Input.GetAxis("Mouse X") * MouseSensitivity;
         MouseY -= Input.GetAxis("Mouse Y") * MouseSensitivity;
 
-        //Limit the Mouse Y to prevent rotating the camera
+        //Limit the Mouse Y to prevent excessive Rotation in the Camera
         MouseY = Mathf.Clamp(MouseY, -80f, 40f);
 
         //Set this Camera To look at the Target
